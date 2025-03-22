@@ -6,7 +6,7 @@
     <title>FINNOVA - AI Financial Assistant</title>
     <style>
         /* Import Google Font */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@400;700&display=swap');
 
         * {
             margin: 0;
@@ -16,232 +16,186 @@
         }
 
         body {
-            background: #0f0c29; /* Dark gradient background */
-            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+            background: #1a1a2e; /* Dark blue background */
             color: white;
             text-align: center;
             overflow-x: hidden;
-        }
-
-        /* Particle Effect Container */
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 0;
         }
 
         /* Navigation Bar */
         header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
             padding: 15px 50px;
-            background: rgba(0, 0, 0, 0.7);
-            position: fixed;
-            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
         }
 
         .logo {
             font-size: 24px;
             font-weight: bold;
-            background: linear-gradient(45deg, #32cd32, #00ff88);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glow 2s infinite alternate;
+            color: #00b894;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 5px #00b894, 0 0 10px #00b894;
         }
 
         .nav-buttons .btn {
-            background: linear-gradient(45deg, #32cd32, #00ff88);
+            background: #00b894;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 18px; /* Smaller padding */
             margin-left: 10px;
             cursor: pointer;
             font-weight: bold;
             color: white;
-            border-radius: 25px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 5px;
+            font-size: 14px; /* Smaller font size */
+            transition: all 0.3s ease;
         }
 
         .nav-buttons .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0px 5px 15px rgba(50, 205, 50, 0.5);
+            background: #00997b;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px #00b894;
         }
 
         /* Hero Section */
         .hero {
-            margin-top: 120px;
-            padding: 20px;
-            position: relative;
-            z-index: 1;
+            margin-top: 80px;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
         }
 
         .hero h1 {
             font-size: 48px;
             font-weight: bold;
-            background: linear-gradient(45deg, #32cd32, #00ff88);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            overflow: hidden;
-            border-right: 2px solid #32cd32;
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: 0.15em;
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 10px #00b894, 0 0 20px #00b894;
+            margin-bottom: 20px;
         }
 
         .hero p {
-            font-size: 20px;
-            margin-top: 20px;
+            font-size: 18px;
+            margin-bottom: 30px;
             color: #ccc;
-            animation: fadeIn 2s ease-in;
         }
 
         /* Button Container */
         .button-container {
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             gap: 40px;
-            margin-top: 60px;
-            animation: fadeInUp 2s ease-out;
+            margin-top: 40px;
+            position: relative;
         }
 
         /* Cards */
         .card {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 25px;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 30px;
             border-radius: 15px;
-            width: 280px;
+            width: 300px; /* Fixed width for all cards */
             text-align: center;
-            box-shadow: 0px 0px 15px rgba(50, 205, 50, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 0 15px #00b894;
+            transition: all 0.3s ease;
         }
 
         .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 0px 25px rgba(50, 205, 50, 1);
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px #00b894;
         }
 
+        /* Card Headings */
         .card h3 {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: bold;
             margin-bottom: 15px;
-            background: linear-gradient(45deg, #32cd32, #00ff88);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #00b894;
+            white-space: nowrap; /* Prevent text from wrapping */
+            overflow: hidden; /* Hide overflow */
+            text-overflow: ellipsis; /* Add ellipsis if text overflows */
         }
 
         .card p {
             font-size: 16px;
+            margin: 15px 0;
             color: #ccc;
-            margin-bottom: 20px;
         }
 
-        .action-btn {
-            background: linear-gradient(45deg, #32cd32, #00ff88);
+        .card i {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #00b894;
+        }
+
+        /* Buttons inside cards */
+        .card .action-btn {
+            background: #00b894;
             border: none;
-            padding: 12px 20px;
+            padding: 10px 18px; /* Consistent padding */
             font-weight: bold;
             color: white;
             cursor: pointer;
-            border-radius: 25px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 14px; /* Consistent font size */
+            transition: all 0.3s ease;
+            width: 100%; /* Full width for consistency */
+            display: inline-block; /* Ensure buttons are the same size */
+            text-align: center; /* Center text */
         }
 
-        .action-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0px 5px 15px rgba(50, 205, 50, 0.5);
+        .card .action-btn:hover {
+            background: #00997b;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px #00b894;
+        }
+
+        /* Chatbot Card */
+        .chatbot-card {
+            margin-top: 80px;
         }
 
         /* About Us Section */
         .about-us {
             margin-top: 100px;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 40px 20px;
             border-radius: 15px;
-            width: 80%;
+            width: 70%;
             margin-left: auto;
             margin-right: auto;
             text-align: center;
-            animation: fadeInUp 2s ease-out;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 0 15px #00b894;
         }
 
         .about-us h2 {
-            color: #32cd32;
+            color: #00b894;
             font-size: 28px;
             font-weight: bold;
-            margin-bottom: 30px;
-            background: linear-gradient(45deg, #32cd32, #00ff88);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .about-item {
-            margin-bottom: 30px;
-            text-align: left;
-            padding: 0 10%;
-        }
-
-        .about-item h3 {
-            color: #32cd32;
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 10px #00b894;
         }
 
         .about-item p {
             color: #ccc;
             font-size: 16px;
             line-height: 1.8;
+            margin: 0;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: #32cd32; }
-        }
-
-        @keyframes glow {
-            0% { text-shadow: 0 0 5px #32cd32; }
-            100% { text-shadow: 0 0 20px #00ff88; }
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
-    <!-- Particles.js Library -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Particle Effect -->
-    <div id="particles-js"></div>
-
     <!-- Navigation Bar -->
     <header>
         <div class="logo">FINNOVA</div>
@@ -259,18 +213,24 @@
         <!-- Button Section -->
         <div class="button-container">
             <div class="card">
+                <i class="fas fa-chart-line"></i>
                 <h3>Stock Predictor</h3>
                 <p>AI-powered predictions for better investments.</p>
                 <button class="action-btn">Try Now</button>
             </div>
 
             <div class="card">
+                <i class="fas fa-coins"></i>
                 <h3>Portfolio Optimization</h3>
                 <p>Optimize your investments for maximum returns.</p>
                 <button class="action-btn">Optimize</button>
             </div>
+        </div>
 
-            <div class="card">
+        <!-- Chatbot Button -->
+        <div class="button-container">
+            <div class="card chatbot-card">
+                <i class="fas fa-robot"></i>
                 <h3>Chatbot</h3>
                 <p>Get instant financial insights with AI.</p>
                 <button class="action-btn">Chat Now</button>
@@ -281,28 +241,9 @@
     <!-- About Us Section -->
     <section class="about-us">
         <h2>About Us</h2>
-
         <div class="about-item">
-            <h3>📈 Stock Predictor</h3>
-            <p>Our AI-powered stock predictor helps investors make **real-time, data-driven** investment decisions, ensuring you maximize your market opportunities.</p>
-        </div>
-
-        <div class="about-item">
-            <h3>📊 Portfolio Optimization</h3>
-            <p>Our portfolio optimization tool ensures **your investments are well-balanced** for maximum returns, helping you make strategic financial decisions with confidence.</p>
-        </div>
-
-        <div class="about-item">
-            <h3>🤖 AI Chatbot</h3>
-            <p>Our AI chatbot offers **instant financial insights**, answering queries and providing market analysis so you can navigate the stock market with precision.</p>
+            <p>FINNOVA is your AI-powered financial assistant, designed to help you make smarter investment decisions. With tools like stock predictions, portfolio optimization, and an AI chatbot, we provide real-time insights to maximize your financial growth.</p>
         </div>
     </section>
-
-    <!-- Particles.js Configuration -->
-    <script>
-        particlesJS.load('particles-js', 'particles.json', function() {
-            console.log('Particles.js loaded!');
-        });
-    </script>
 </body>
 </html>
