@@ -41,23 +41,9 @@
             text-shadow: 0 0 5px #00b894, 0 0 10px #00b894;
         }
 
-        .nav-buttons .btn {
-            background: #00b894;
-            border: none;
-            padding: 10px 18px; /* Smaller padding */
-            margin-left: 10px;
-            cursor: pointer;
-            font-weight: bold;
+        .nav-buttons h5 {
             color: white;
-            border-radius: 5px;
-            font-size: 14px; /* Smaller font size */
-            transition: all 0.3s ease;
-        }
-
-        .nav-buttons .btn:hover {
-            background: #00997b;
-            transform: scale(1.05);
-            box-shadow: 0 0 10px #00b894;
+            margin: 0;
         }
 
         /* Hero Section */
@@ -96,7 +82,7 @@
             background: rgba(0, 0, 0, 0.85);
             padding: 30px;
             border-radius: 15px;
-            width: 300px; /* Fixed width for all cards */
+            width: 300px;
             text-align: center;
             box-shadow: 0 0 15px #00b894;
             transition: all 0.3s ease;
@@ -113,9 +99,9 @@
             font-weight: bold;
             margin-bottom: 15px;
             color: #00b894;
-            white-space: nowrap; /* Prevent text from wrapping */
-            overflow: hidden; /* Hide overflow */
-            text-overflow: ellipsis; /* Add ellipsis if text overflows */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .card p {
@@ -134,17 +120,17 @@
         .card .action-btn {
             background: #00b894;
             border: none;
-            padding: 10px 18px; /* Consistent padding */
+            padding: 10px 18px;
             font-weight: bold;
             color: white;
             cursor: pointer;
             border-radius: 5px;
             margin-top: 15px;
-            font-size: 14px; /* Consistent font size */
+            font-size: 14px;
             transition: all 0.3s ease;
-            width: 100%; /* Full width for consistency */
-            display: inline-block; /* Ensure buttons are the same size */
-            text-align: center; /* Center text */
+            width: 100%;
+            display: inline-block;
+            text-align: center;
         }
 
         .card .action-btn:hover {
@@ -200,8 +186,8 @@
     <header>
         <div class="logo">FINNOVA</div>
         <div class="nav-buttons">
-            <button class="btn">Sign Up</button>
-            <button class="btn">Sign In</button>
+           <h5>YOUR TRUSTED INVESTMENT</h5>
+           <h5>PARTNER</h5>
         </div>
     </header>
 
@@ -216,14 +202,18 @@
                 <i class="fas fa-chart-line"></i>
                 <h3>Stock Predictor</h3>
                 <p>AI-powered predictions for better investments.</p>
-                <button class="action-btn">Try Now</button>
+                <a href="https://stock-predictor-3.onrender.com" target="_blank">
+                    <button class="action-btn">Try Now</button>
+                </a>
             </div>
 
             <div class="card">
                 <i class="fas fa-coins"></i>
                 <h3>Portfolio Optimization</h3>
                 <p>Optimize your investments for maximum returns.</p>
-                <button class="action-btn">Optimize</button>
+                <a href="https://portfoliooptimizerpy-j9rk7r3iugtvhqvxpftym5.streamlit.app/" target="_blank">
+                    <button class="action-btn">Optimize</button>
+                </a>
             </div>
         </div>
 
@@ -231,9 +221,11 @@
         <div class="button-container">
             <div class="card chatbot-card">
                 <i class="fas fa-robot"></i>
-                <h3>Chatbot</h3>
+                <h3>AI FINANCE GURU</h3>
                 <p>Get instant financial insights with AI.</p>
-                <button class="action-btn">Chat Now</button>
+                <a href="https://advancedfinancegurupy-kkdydjxquihyx2zfsle4ug.streamlit.app/" target="_blank">
+                    <button class="action-btn">Chat Now</button>
+                </a>
             </div>
         </div>
     </section>
@@ -242,7 +234,7 @@
     <section class="about-us">
         <h2>About Us</h2>
         <div class="about-item">
-            <p>FINNOVA is your AI-powered financial assistant, designed to help you make smarter investment decisions. With tools like stock predictions, portfolio optimization, and an AI chatbot, we provide real-time insights to maximize your financial growth.</p>
+            <p>FINNOVA is your AI-powered financial assistant, designed to help you make smarter investment decisions. With tools like stock predictions, portfolio optimization, and an AI FINANCE GURU, we provide real-time insights to maximize your financial growth.</p>
         </div>
     </section>
 </body>
